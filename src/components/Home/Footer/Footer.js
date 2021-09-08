@@ -39,7 +39,7 @@ const Footer = () => {
         <footer className="footer-area clear-both">
             <div className="container">
                 <div className="row py-5">
-                    <FooterCol key={1} menuTitle={""} menuItems={noNamed} />
+                    <FooterCol key={1} menuTitle={"Portal"} menuItems={noNamed} />
                     <FooterCol key={2} menuTitle="Services" menuItems={services} />
                     <FooterCol key={3} menuTitle="Oral Health" menuItems={oralHealth} />
                     <FooterCol key={4} menuTitle="Our Address" menuItems={ourAddress}>
@@ -56,7 +56,7 @@ const Footer = () => {
                         </ul>
                         <div className="mt-5">
                             <h6>Call now</h6>
-                            <button className="btn btn-info">+2025550295</button>
+                            <button className="btn btn-info text-white">+2025550295</button>
                         </div>
                     </FooterCol>
                 </div>
