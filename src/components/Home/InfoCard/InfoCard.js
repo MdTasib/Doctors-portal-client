@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const InfoCard = ({ info }) => {
   return (
-    <div className="col-md-4 py-2">
+    <div className="col-md-4 pb-4">
       <div className={`card bg-${info.background} text-white h-100`}>
         <div className="row d-flex align-items-center g-0">
           <div className="col-md-4 fs-1 ps-3">
