@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Footer from '../../common/Footer/Footer';
 import Navbar from '../../common/Navbar/Navbar';
 import AppointmentHeader from '../AppointmentHeader/AppointmentHeader';
+import BookAppointment from '../BookAppointment/BookAppointment';
 
 const Appointment = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -13,6 +14,7 @@ const Appointment = () => {
     <div>
       <Navbar />
       <AppointmentHeader handleDateChange={handleDateChange} />
+      <BookAppointment date={selectedDate} />
       <Footer />
     </div>
   );
