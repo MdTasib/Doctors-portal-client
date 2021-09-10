@@ -1,0 +1,20 @@
+.sidebar li{
+    margin-bottom: 2em;
+}
+
+.sidebar li a {
+  text-decoration: none;
+  display: flex;
+}
+
+.sidebar li a span {
+  line-height: 20px;
+}
+
+.sidebar li:hover span{
+    display: inline-block;
+    transform: translate(5px);
+}
+.sidebar svg{
+    margin-right: 10px;
+}

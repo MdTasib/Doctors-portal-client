@@ -24,13 +24,16 @@ const AppointmentsByDate = ({ appointments, date }) => {
         </thead>
         <tbody>
           {
-            appointments.map(appointment => (
-              <tr key={appointment._id}>
-                <td>{appointment.name}</td>
-                <td>{appointment.service}</td>
-                <td>{appointment.number}</td>
-              </tr>
-            ))
+            appointments.length ?
+              appointments.map(appointment => (
+                <tr key={appointment._id}>
+                  <td>{appointment.name}</td>
+                  <td>{appointment.service}</td>
+                  <td>{appointment.number}</td>
+                </tr>
+              ))
+              :
+              <h5 className='py-4 text-danger'>No Appointments For This Date</h5>
           }
         </tbody>
       </table>
