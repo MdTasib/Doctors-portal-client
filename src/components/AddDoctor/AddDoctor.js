@@ -3,11 +3,36 @@ import Sidebar from '../common/Sidebar/Sidebar';
 
 const AddDoctor = () => {
   const [info, setInfo] = useState({});
+  const [file, setFile] = useState(null);
 
   const handleBlur = event => {
     const newInfo = { ...info };
     newInfo[event.target.name] = event.target.value;
     setInfo(newInfo);
+  };
+
+  const handleFileChange = e => {
+    const newFile = e.target.files[0];
+    setFile(newFile);
+  };
+
+  const handleSubmit = () => {
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('name', info.name);
+    formData.append('email', info.email);
+
+    fetch('http://localhost:5000/addDoctor', {
+      method: 'POST',
+      body: formData,
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+      })
+      .catch(error => {
+        console.log(error);
+      })
   };
 
   return (
@@ -17,7 +42,7 @@ const AddDoctor = () => {
       </div>
       <div className="col-md-10 p-4 pe-5">
         <h5 className="text-info">Add a Doctor</h5>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="form-group py-2">
             <label htmlFor="exampleInputEmail1">Email address</label>
             <input onBlur={handleBlur} type="email" className="form-control" name="email" placeholder="Enter Email" />
@@ -28,7 +53,7 @@ const AddDoctor = () => {
           </div>
           <div className="form-group py-2">
             <label htmlFor="exampleInputPassword1">Upload a image</label>
-            <input type="file" className="form-control" id="exampleInputPassword1" placeholder="Picture" />
+            <input onChange={handleFileChange} type="file" className="form-control" id="exampleInputPassword1" placeholder="Picture" />
           </div>
           <button type="submit" className="my-2 btn btn-info text-white">Submit</button>
         </form>
