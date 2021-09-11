@@ -26,7 +26,7 @@ const Dashboard = () => {
   return (
     <section className='container-fluid bg-light bg-gradient'>
       <div className="row">
-        <div className="col-md-2 bg-info  py-5">
+        <div className="col-md-3 bg-info  py-5">
           <Sidebar />
         </div>
         <div className="col-md-4 py-5 ps-4">
@@ -36,7 +36,7 @@ const Dashboard = () => {
             value={new Date()}
           />
         </div>
-        <div className="col-md-6 py-5 pe-5">
+        <div className="col-md-5 py-5 pe-5">
           <AppointmentsByDate date={selectedDate} appointments={appointments} />
         </div>
       </div>

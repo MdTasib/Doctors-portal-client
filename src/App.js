@@ -10,6 +10,7 @@ import Appointment from "./components/Appointment/Appointment/Appointment";
 import Login from "./components/Login/Login/Login";
 import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
 import AllPatients from "./components/AllPatients/AllPatients/AllPatients";
+import AddDoctor from "./components/AddDoctor/AddDoctor";
 
 export const UserContext = createContext();
 
@@ -24,11 +25,14 @@ export default function App() {
           <Route path='/appointment'>
             <Appointment />
           </Route>
-          <Route path='/dashboard/appointment'>
-            <Dashboard />
+          <Route path='/addDoctor'>
+            <AddDoctor />
           </Route>
           <Route path='/dashboard/allpatients'>
             <AllPatients />
+          </Route>
+          <Route path='/dashboard'>
+            <Dashboard />
           </Route>
           <Route path="/login">
             <Login />
