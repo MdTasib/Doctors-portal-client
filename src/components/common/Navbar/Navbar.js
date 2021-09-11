@@ -10,11 +10,11 @@ const Navbar = () => {
       </button>
       <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div className="navbar-nav ms-auto">
-          <Link className="nav-link text-secondary ms-4 active" aria-current="page" to="#">Home</Link>
-          <Link className="nav-link text-secondary ms-4" to="#">About</Link>
-          <Link className="nav-link text-secondary ms-4" to="#">Dental Services</Link>
-          <Link className="nav-link text-secondary ms-4" to="#">Reviews</Link>
-          <Link className="nav-link text-secondary ms-4" to="#">Blog</Link>
+          <Link className="nav-link text-secondary ms-4 active" aria-current="page" to="/">Home</Link>
+          <Link className="nav-link text-secondary ms-4" to="/allpatients">Patient</Link>
+          <Link className="nav-link text-secondary ms-4" to="/dashboard">Dashboad</Link>
+          <Link className="nav-link text-secondary ms-4" to="/dashboard">Admin</Link>
+          <Link className="nav-link text-secondary ms-4" to="/appointment">Appointment</Link>
           <Link className="nav-link text-secondary ms-4" to="#">Contact Us</Link>
         </div>
       </div>
