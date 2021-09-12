@@ -18,7 +18,7 @@ const AppointmentDataTable = ({ appointments }) => {
         {
           appointments.map((appointment, index) =>
 
-            <tr>
+            <tr key={appointment._id}>
               <td>{index + 1}</td>
               <td>{appointment.name}</td>
               <td>{appointment.gender}</td>

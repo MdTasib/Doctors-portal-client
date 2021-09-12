@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Sidebar from '../../common/Sidebar/Sidebar';
 import AppointmentsByDate from '../AppointmentsByDate/AppointmentsByDate';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
+import { UserContext } from '../../../App';
 
 const Dashboard = () => {
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [appointments, setAppointments] = useState([]);
 
@@ -16,7 +18,7 @@ const Dashboard = () => {
     fetch('http://localhost:5000/appointmentsByDate', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ date: selectedDate })
+      body: JSON.stringify({ date: selectedDate, email: loggedInUser.email })
     })
       .then(response => response.json())
       .then(result => setAppointments(result))

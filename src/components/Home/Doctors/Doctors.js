@@ -1,30 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Doctor from '../Doctor/Doctor';
-import doctor1 from '../../../images/1.png';
-import doctor2 from '../../../images/2.png';
-
-const doctors = [
-    {
-        id: 1,
-        img: doctor1,
-        number: '+880-188-934789',
-        name: 'Dr. Myles'
-    },
-    {
-        id: 2,
-        img: doctor2,
-        number: '+880-122-368783',
-        name: 'Dr. Naresh'
-    },
-    {
-        id: 3,
-        img: doctor1,
-        number: '+880-188-934789',
-        name: 'Dr. Myles'
-    }
-]
 
 const Doctors = () => {
+    const [doctors, setDoctors] = useState([])
+    useEffect(() => {
+        fetch('http://localhost:5000/doctors')
+            .then(res => res.json())
+            .then(data => setDoctors(data))
+    }, [])
+
+    console.log(doctors);
+
     return (
         <section className="doctors py-5">
             <div className="container">
