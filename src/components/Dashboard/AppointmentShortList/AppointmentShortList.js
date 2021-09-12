@@ -17,7 +17,7 @@ const AppointmentShortList = ({ appointments }) => {
             <tr key={appointment._id}>
               <td>{appointment.name}</td>
               <td>{appointment.service}</td>
-              <td>{appointment.number}</td>
+              <td>{appointment.email}</td>
             </tr>
           )
         }

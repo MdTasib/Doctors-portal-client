@@ -2,14 +2,12 @@ import React, { useState, useEffect } from 'react';
 import Doctor from '../Doctor/Doctor';
 
 const Doctors = () => {
-    const [doctors, setDoctors] = useState([])
+    const [doctors, setDoctors] = useState([]);
     useEffect(() => {
         fetch('http://localhost:5000/doctors')
             .then(res => res.json())
             .then(data => setDoctors(data))
     }, [])
-
-    console.log(doctors);
 
     return (
         <section className="doctors py-5">
