@@ -15,7 +15,7 @@ const Dashboard = () => {
   }
 
   useEffect(() => {
-    fetch('http://localhost:5000/appointmentsByDate', {
+    fetch('https://shrouded-escarpment-83874.herokuapp.com/appointmentsByDate', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({ date: selectedDate, email: loggedInUser.email })
